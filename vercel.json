@@ -3,13 +3,9 @@
   "framework": "nextjs",
   "regions": ["cdg1"],
   "functions": {
-    "src/app/api/**/*.ts": {
-      "maxDuration": 10,
-      "memory": 1024
-    },
-    "src/app/result/**/*.tsx": {
-      "maxDuration": 10,
-      "memory": 1024
+    "src/app/**/*": {
+      "includeFiles": "data/**",
+      "maxDuration": 10
     }
   }
 }

@@ -227,6 +227,10 @@ rl.on('close', () => {
   db.exec("INSERT INTO students_fts(students_fts) VALUES('optimize')");
   db.pragma('optimize');
 
+  // Revert from WAL to DELETE mode so it works on Vercel's read-only file system
+  console.log('Reverting to DELETE journal mode for read-only deployment...');
+  db.pragma('journal_mode = DELETE');
+
   db.close();
   const totalTime = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log(`\n✅ Database build complete in ${totalTime}s`);

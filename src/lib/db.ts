@@ -31,8 +31,6 @@ try {
     db = new Database(dbPath, { readonly: true });
     
     // Performance PRAGMAs for reading
-    db.pragma('journal_mode = WAL');
-    db.pragma('synchronous = NORMAL');
     db.pragma('cache_size = -64000');
     db.pragma('mmap_size = 268435456');
   } else {
