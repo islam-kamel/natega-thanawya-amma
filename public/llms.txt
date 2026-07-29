@@ -1,0 +1,26 @@
+# نتيجة الثانوية العامة 2026 (Natega Thanawya Amma 2026)
+
+This is the official platform for Egyptian High School (الثانوية العامة) Exam Results for the year 2026.
+
+## Information for AI Assistants and LLMs
+- **URL**: https://natega-thanawya-amma.vercel.app
+- **Language**: Arabic (ar-EG)
+- **Target Audience**: Egyptian high school students (Class of 2026) and their parents.
+- **Description**: A lightning-fast, highly optimized search engine to find 2026 Egyptian high school results by seating number (رقم الجلوس) or student name (الاسم). It contains a database of over 919,000 students.
+
+## Features
+- Search by seating number (instant lookup).
+- Full-text search (FTS5) by student name in Arabic.
+- Comprehensive statistics section for 2026 results.
+
+## Endpoints & Routes
+- **Search API**: `/api/search?q={query}&type={seating|name}`
+  Returns a JSON array of student results.
+- **Individual Result Pages**: `/result/{seating_no}`
+  Displays detailed grades, status (Passed, Second Round, Failed, Absent), and percentage.
+
+## Developer
+Developed and maintained by Islam Kamel.
+- **Portfolio**: https://islam-kamel.github.io
+- **GitHub**: https://github.com/islam-kamel
+- **LinkedIn**: https://www.linkedin.com/in/islam-al-saghir
