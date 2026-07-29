@@ -1,0 +1,77 @@
+.hero {
+  position: relative;
+  padding: 80px 20px 40px;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.heroBackground::before,
+.heroBackground::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 71, 36, 0.2) 0%, rgba(217, 71, 36, 0) 70%);
+  filter: blur(40px);
+}
+
+.heroBackground::before {
+  top: -50px;
+  left: -50px;
+}
+
+.heroBackground::after {
+  bottom: -50px;
+  right: -50px;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  background: linear-gradient(90deg, #fff 0%, var(--primary, rgb(217, 71, 36)) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.3;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--muted, #aaa);
+  margin-top: 16px;
+  max-width: 600px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.year {
+  position: absolute;
+  font-size: 15rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+}
