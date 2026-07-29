@@ -17,21 +17,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const percentage = ((student.total_degree / 410) * 100).toFixed(1);
+  const percentage = ((student.total_degree / 320) * 100).toFixed(1);
 
   return {
     title: `نتيجة ${student.arabic_name} - الثانوية العامة 2026`,
-    description: `نتيجة الطالب ${student.arabic_name} في الثانوية العامة 2026 - رقم الجلوس ${student.seating_no} - المجموع ${student.total_degree} من 410 (${percentage}%) - ${student.student_case_desc}`,
+    description: `نتيجة الطالب ${student.arabic_name} في الثانوية العامة 2026 - رقم الجلوس ${student.seating_no} - المجموع ${student.total_degree} من 320 (${percentage}%) - ${student.student_case_desc}`,
     openGraph: {
       title: `نتيجة ${student.arabic_name} - الثانوية العامة 2026`,
-      description: `المجموع: ${student.total_degree}/410 (${percentage}%) - ${student.student_case_desc}`,
+      description: `المجموع: ${student.total_degree}/320 (${percentage}%) - ${student.student_case_desc}`,
       type: "article",
       locale: "ar_EG",
     },
     twitter: {
       card: "summary",
       title: `نتيجة ${student.arabic_name} - ثانوية عامة 2026`,
-      description: `المجموع: ${student.total_degree}/410 - ${student.student_case_desc}`,
+      description: `المجموع: ${student.total_degree}/320 - ${student.student_case_desc}`,
     },
   };
 }
@@ -52,11 +52,11 @@ export default async function ResultPage({ params }: PageProps) {
     notFound();
   }
 
-  const percentage = ((student.total_degree / 410) * 100).toFixed(1);
+  const percentage = ((student.total_degree / 320) * 100).toFixed(1);
   const statusInfo = getStatusInfo(student.student_case_desc);
   const isExcellent = student.student_case_desc.includes("ناجح") && student.total_degree >= 300;
   const circumference = 2 * Math.PI * 54;
-  const progressOffset = circumference - (student.total_degree / 410) * circumference;
+  const progressOffset = circumference - (student.total_degree / 320) * circumference;
 
   return (
     <main className={styles.main}>
@@ -117,7 +117,7 @@ export default async function ResultPage({ params }: PageProps) {
               </svg>
               <div className={styles.scoreOverlay}>
                 <span className={styles.scoreValue}>{student.total_degree}</span>
-                <span className={styles.scoreMax}>/ 410</span>
+                <span className={styles.scoreMax}>/ 320</span>
               </div>
             </div>
 
@@ -138,7 +138,7 @@ export default async function ResultPage({ params }: PageProps) {
             <p className={styles.shareText}>شارك النتيجة</p>
             <div className={styles.shareButtons}>
               <a
-                href={`https://wa.me/?text=${encodeURIComponent(`نتيجة ${student.arabic_name} في الثانوية العامة 2026\nالمجموع: ${student.total_degree}/410 (${percentage}%)\n${student.student_case_desc}\nhttps://natega-thanawya-amma.vercel.app/result/${student.seating_no}`)}`}
+                href={`https://wa.me/?text=${encodeURIComponent(`نتيجة ${student.arabic_name} في الثانوية العامة 2026\nالمجموع: ${student.total_degree}/320 (${percentage}%)\n${student.student_case_desc}\nhttps://natega-thanawya-amma.vercel.app/result/${student.seating_no}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.shareBtn} ${styles.whatsapp}`}
@@ -160,7 +160,7 @@ export default async function ResultPage({ params }: PageProps) {
                 </svg>
               </a>
               <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`نتيجة ${student.arabic_name} في الثانوية العامة 2026 - المجموع: ${student.total_degree}/410 (${percentage}%)`)}&url=${encodeURIComponent(`https://natega-thanawya-amma.vercel.app/result/${student.seating_no}`)}`}
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`نتيجة ${student.arabic_name} في الثانوية العامة 2026 - المجموع: ${student.total_degree}/320 (${percentage}%)`)}&url=${encodeURIComponent(`https://natega-thanawya-amma.vercel.app/result/${student.seating_no}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.shareBtn} ${styles.twitter}`}
@@ -179,7 +179,7 @@ export default async function ResultPage({ params }: PageProps) {
           <h2>نتيجة الثانوية العامة 2026 برقم الجلوس</h2>
           <p>
             تم اعتماد نتيجة الثانوية العامة للعام الدراسي 2025/2026 رسمياً. يمكنك الاستعلام عن نتيجتك من خلال رقم الجلوس أو الاسم.
-            المجموع الكلي من 410 درجة. هذه صفحة نتيجة الطالب {student.arabic_name} برقم جلوس {student.seating_no}.
+            المجموع الكلي من 320 درجة. هذه صفحة نتيجة الطالب {student.arabic_name} برقم جلوس {student.seating_no}.
           </p>
         </section>
       </div>

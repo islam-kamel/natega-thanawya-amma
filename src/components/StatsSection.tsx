@@ -33,7 +33,7 @@ export default function StatsSection({ stats }: StatsSectionProps) {
             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-          <div className={styles.statValue}>{stats.total_students.toLocaleString('ar-EG')}</div>
+          <div className={styles.statValue}>{stats.total_students.toLocaleString('en')}</div>
           <div className={styles.statLabel}>إجمالي الطلاب</div>
         </div>
         
@@ -41,7 +41,7 @@ export default function StatsSection({ stats }: StatsSectionProps) {
           <svg className={styles.statIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          <div className={styles.statValue}>{stats.pass_rate}%</div>
+          <div className={styles.statValue}>{Number(stats.pass_rate).toFixed(1)}%</div>
           <div className={styles.statLabel}>نسبة النجاح</div>
         </div>
         
@@ -49,7 +49,7 @@ export default function StatsSection({ stats }: StatsSectionProps) {
           <svg className={styles.statIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
           </svg>
-          <div className={styles.statValue}>{stats.max_degree} <span style={{fontSize: '1rem', color: '#888'}}>/ 410</span></div>
+          <div className={styles.statValue} dir="ltr">{stats.max_degree} <span style={{fontSize: '1rem', color: '#888'}}>/ 320</span></div>
           <div className={styles.statLabel}>أعلى مجموع</div>
         </div>
         
@@ -57,7 +57,7 @@ export default function StatsSection({ stats }: StatsSectionProps) {
           <svg className={styles.statIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
           </svg>
-          <div className={styles.statValue}>{stats.avg_degree}</div>
+          <div className={styles.statValue}>{Number(stats.avg_degree).toFixed(1)}</div>
           <div className={styles.statLabel}>متوسط الدرجات</div>
         </div>
       </div>

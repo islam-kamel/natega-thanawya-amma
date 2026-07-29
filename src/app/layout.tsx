@@ -108,7 +108,7 @@ const faqJsonLd = {
       name: "ما هو الحد الأقصى للمجموع في الثانوية العامة؟",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "الحد الأقصى للمجموع الكلي هو 410 درجة.",
+        text: "الحد الأقصى للمجموع الكلي هو 320 درجة.",
       },
     },
     {
@@ -148,6 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${GTM_ID}');`,
           }}
         />
+
         {/* Preconnect to Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

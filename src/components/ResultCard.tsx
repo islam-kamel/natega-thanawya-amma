@@ -48,12 +48,12 @@ export default function ResultCard({ student }: { student: Student }) {
   };
 
   const statusColor = getStatusColor(student.student_case_desc);
-  const percentage = ((student.total_degree / 410) * 100).toFixed(2);
+  const percentage = ((student.total_degree / 320) * 100).toFixed(2);
   const isExcellent = student.student_case_desc.includes('ناجح دور أول') && student.total_degree > 300;
 
   const handleShare = async (e: React.MouseEvent) => {
     e.preventDefault();
-    const text = `نتيجة الطالب ${student.arabic_name} - المجموع: ${student.total_degree}/410 بنسبة ${percentage}%`;
+    const text = `نتيجة الطالب ${student.arabic_name} - المجموع: ${student.total_degree}/320 بنسبة ${percentage}%`;
     if (navigator.share) {
       try {
         await navigator.share({
@@ -72,15 +72,15 @@ export default function ResultCard({ student }: { student: Student }) {
 
   const radius = 40;
   const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference - (score / 410) * circumference;
+  const strokeDashoffset = circumference - (score / 320) * circumference;
 
   return (
     <Link href={`/result/${student.seating_no}`} passHref>
       <div className={styles.card}>
         <div className={styles.header}>
           <div>
-            <h3 className={styles.name}>{student.arabic_name}</h3>
-            <p className={styles.seatingNo}>رقم الجلوس: {student.seating_no}</p>
+            <h3 className={styles.name} translate="no" spellCheck={false}>{student.arabic_name}</h3>
+            <p className={styles.seatingNo} translate="no" spellCheck={false}>رقم الجلوس: <span>{student.seating_no}</span></p>
           </div>
           <button className={styles.shareBtn} onClick={handleShare} aria-label="مشاركة">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -118,9 +118,9 @@ export default function ResultCard({ student }: { student: Student }) {
           </div>
           
           <div className={styles.scoreDetails}>
-            <div className={styles.scoreValueContainer}>
+            <div className={styles.scoreValueContainer} dir="ltr">
               <span className={styles.scoreValue}>{score}</span>
-              <span className={styles.scoreMax}>/ 410</span>
+              <span className={styles.scoreMax}> / 320</span>
             </div>
             
             <div 

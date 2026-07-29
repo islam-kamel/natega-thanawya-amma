@@ -313,3 +313,7 @@ html, body {
     padding: 0 60px;
   }
 }
+
+a {
+  text-decoration: none;
+}
